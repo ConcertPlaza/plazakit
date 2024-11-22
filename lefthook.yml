@@ -1,0 +1,11 @@
+pre-commit:
+  parallel: false
+  commands:
+    lint:
+      run: yarn biome check --write --unsafe --staged --no-errors-on-unmatched && git add -u
+    typecheck:
+      run: yarn tsc
+    build:
+      run: yarn build
+    test:
+      run: yarn test:ci
